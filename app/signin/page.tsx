@@ -20,11 +20,10 @@ export default function SignIn() {
     event.preventDefault();
     try {
       const loggedInUser = await signIn(email, password);
-      if (!guestCart.length) {
-        store.dispatch(logIn(loggedInUser));
-        if (checkout && guestCart.length) return (window.location.href = "/order");
-      }
-      store.dispatch(initialize(guestCart));
+      store.dispatch(logIn(loggedInUser));
+      if (guestCart.length) store.dispatch(initialize(guestCart));
+      if (checkout && guestCart.length) window.location.href = "/order";
+
       for (let i = 0; i < guestCart.length; i++) await addCar(loggedInUser?.id, guestCart[i].id, guestCart[i].quantity);
     } catch (e) {
       return toast.error("Wrong Email or Password");

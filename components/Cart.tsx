@@ -50,7 +50,6 @@ export default function Cart() {
   }, []);
 
   const remove = async (carId: number) => {
-    if (!user.id) return;
     try {
       const res = await removeCar(user.id, carId);
       store.dispatch(removeFromCart(carId));
