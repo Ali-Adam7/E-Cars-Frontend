@@ -1,0 +1,25 @@
+{
+    "rewrites": [
+        {
+            "source": "/aws/catalog/:route*",
+            "destination": "http://ec2-3-85-89-213.compute-1.amazonaws.com:8003/:route*"
+          },
+          {
+            "source": "/aws/auth/:route*",
+            "destination": "http://ec2-3-85-89-213.compute-1.amazonaws.com:8002/:route*"
+          },
+          {
+            "source": "/aws/orders/:route*",
+            "destination": "http://ec2-3-85-89-213.compute-1.amazonaws.com:8006/:route*"
+          },
+          {
+            "source": "/aws/shoppingCart/:route*",
+            "destination": "http://ec2-3-85-89-213.compute-1.amazonaws.com:8004/:route*"
+          },
+          {
+            "source": "/aws/analytics/:route*",
+            "destination": "http://ec2-3-85-89-213.compute-1.amazonaws.com:8005/:route*"
+          }
+    ]
+  }
+
